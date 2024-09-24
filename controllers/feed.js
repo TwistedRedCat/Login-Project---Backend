@@ -7,7 +7,6 @@ const jwt = require('jsonwebtoken');
 
 const { validationResult } = require('express-validator/check');
 
-const Post = require('../models/post');
 const User = require('../models/user');
 const { type } = require('os');
 
@@ -82,7 +81,7 @@ exports.submit = (req, res, next) => {
         port: 465,
         auth: {
           user: 'dev@husin.xyz',
-          pass: 'Kucing6187#',
+          pass: `${process.env.EMAIL_PASSWORD}`,
         },
       });
 

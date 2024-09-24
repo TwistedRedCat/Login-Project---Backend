@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 // const multer = require('multer');
 
 const feedRoutes = require('./routes/feed');
-const authRoutes = require('./routes/auth');
 
 const app = express();
 
@@ -34,9 +33,11 @@ const app = express();
 
 // app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
 app.use(bodyParser.json()); // application/json
-app.use(
-  multer({ storage: fileStorage, fileFilter: fileFilter }).single('image')
-);
+
+// ****For future use***
+// app.use(
+//   multer({ storage: fileStorage, fileFilter: fileFilter }).single('image')
+// );
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.use((req, res, next) => {
