@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const multer = require('multer');
 
-const feedRoutes = require('./routes/feed');
+const routesFeed = require('./routes/routeFeed');
 
 const app = express();
 
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', feedRoutes);
+app.use('/', routesFeed);
 // app.use("/feed", feedRoutes);
 
 app.use((error, req, res, next) => {
