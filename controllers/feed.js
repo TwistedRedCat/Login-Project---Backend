@@ -76,28 +76,28 @@ exports.submit = (req, res, next) => {
         });
       });
 
-      const transporter = nodemailer.createTransport({
-        host: 'mail.privateemail.com',
-        port: 465,
-        auth: {
-          user: 'dev@husin.xyz',
-          pass: `${process.env.EMAIL_PASSWORD}`,
-        },
-      });
+      // const transporter = nodemailer.createTransport({
+      //   host: 'mail.privateemail.com',
+      //   port: 465,
+      //   auth: {
+      //     user: 'dev@husin.xyz',
+      //     pass: `${process.env.EMAIL_PASSWORD}`,
+      //   },
+      // });
 
-      const mailData = {
-        from: 'Husin <dev@husin.xyz>', // sender address
-        to: email, // list of receivers
-        subject: 'Sending Email using Node.js',
-        text: 'Oi, whatcha doin!',
-        html: `<b>Your account has been created! </b>
-                   <br> Enter this 4 digit number <b style="font-size: 30px">${token}</b> to activate.<br/>`,
-      };
+      // const mailData = {
+      //   from: 'Husin <dev@husin.xyz>', // sender address
+      //   to: email, // list of receivers
+      //   subject: 'Sending Email using Node.js',
+      //   text: 'Oi, whatcha doin!',
+      //   html: `<b>Your account has been created! </b>
+      //              <br> Enter this 4 digit number <b style="font-size: 30px">${token}</b> to activate.<br/>`,
+      // };
 
-      transporter.sendMail(mailData, (err, info) => {
-        if (err) console.log(err);
-        console.log('success!');
-      });
+      // transporter.sendMail(mailData, (err, info) => {
+      //   if (err) console.log(err);
+      //   console.log('success!');
+      // });
     })
     .catch((err) => {
       if (!err.statusCode) {
